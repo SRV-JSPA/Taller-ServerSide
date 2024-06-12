@@ -1,4 +1,6 @@
-from flask import Blueprint
+from flask import Blueprint, request, jsonify
+from models.carro import Carro
+from utils.db import db
 
 carros = Blueprint('carros', __name__)
 
@@ -10,9 +12,21 @@ def get_carros():
 def get_carro():
     return 'carro'
 
-@carros.route('/carros')
+@carros.route('/carros', methods=['POST'])
 def crear_carro():
-    return 'guardando carro'
+    datos = request.get_json()
+    
+    marca = datos.get('Marca')
+    modelo = datos.get('Modelo')
+    linea = datos.get('Linea')
+    edicion = datos.get('Edicion')
+    
+    new_carro = Carro(marca, modelo, linea, edicion)
+    
+    db.session.add(new_carro)
+    db.session.commit()
+    
+    return jsonify({'mensaje': 'Carro guardado'}), 200
 
 @carros.route('/carros/:id')
 def actualizar_carro():
