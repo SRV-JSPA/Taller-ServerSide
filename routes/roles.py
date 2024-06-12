@@ -57,7 +57,7 @@ def actualizar_rol(id):
 
 
 @roles.route("/roles/<int:id>", methods=["DELETE"])
-def eliminar_carro(id):
+def eliminar_rol(id):
     rol = Roles.query.get(id)
     db.session.delete(rol)
     db.session.commit()
