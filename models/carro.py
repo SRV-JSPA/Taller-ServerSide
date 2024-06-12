@@ -13,3 +13,12 @@ class Carro(db.Model):
         self.Modelo = Modelo
         self.Linea = Linea
         self.Edicion = Edicion
+        
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'Marca': self.Marca,
+            'Modelo': self.Modelo,
+            'Linea': self.Linea,
+            'Edicion': self.Edicion,
+        }
