@@ -1,5 +1,6 @@
 from flask import Flask
 from routes.carros import carros
+from routes.roles import roles
 from flask_sqlalchemy import SQLAlchemy
 from utils.db import db
 
@@ -12,3 +13,4 @@ db.init_app(app)
 
 
 app.register_blueprint(carros)
+app.register_blueprint(roles)
