@@ -2,6 +2,7 @@ from flask import Flask
 from routes.carros import carros
 from routes.roles import roles
 from routes.estados import estados
+from routes.categoria import categorias
 from utils.db import db
 from config import DATABASE_CONNECTION_URI
 
@@ -16,3 +17,4 @@ db.init_app(app)
 app.register_blueprint(carros)
 app.register_blueprint(roles)
 app.register_blueprint(estados)
+app.register_blueprint(categorias)
