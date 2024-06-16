@@ -1,13 +1,13 @@
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
-load_dotenv()
+#load_dotenv()
 
-user = os.environ['PG_USUARIO']
-password = os.environ['PG_PASSWORD']
-host = os.environ['PG_HOST']
-port = os.environ['PG_PORT']
-database = os.environ['PG_DATABASE']
+user = 'postgres'
+password = 'pelu1503'
+host = 'localhost'
+port = '5432'
+database = 'taller'
 
 DATABASE_CONNECTION_URI = (
     f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
