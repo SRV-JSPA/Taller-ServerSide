@@ -10,8 +10,10 @@ from routes.estados import estados
 from routes.categoria import categorias
 from utils.db import db
 from config import DATABASE_CONNECTION_URI
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_CONNECTION_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

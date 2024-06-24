@@ -4,7 +4,7 @@ import os
 #load_dotenv()
 
 user = 'postgres'
-password = 'pelu1503'
+password = '16022004'
 host = 'localhost'
 port = '5432'
 database = 'taller'
