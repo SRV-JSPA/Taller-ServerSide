@@ -14,6 +14,7 @@ class Usuarios(db.Model):
 
     def to_dict(self):
         return {
+            'id': self.id,
             'username':self.username,
             'password':self.password,
             'id_rol':self.id_rol
